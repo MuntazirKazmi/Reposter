@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/cardview_dark_background">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="640px"
+            android:layout_height="640px"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:id="@+id/image1"
+            android:visibility="gone"
+            android:contentDescription="ImageView for loaded instagram image"
+            />
+
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoView"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:visibility="gone"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textColor="@color/colorAccent"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"/>
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/download1"
+            android:layout_gravity="top"
+            android:src="@android:drawable/stat_sys_download"
+            android:scaleType="centerInside"
+            android:background="@color/colorAccentBlur"
+            android:visibility="invisible"/>
+    </FrameLayout>
+
+
+</RelativeLayout>

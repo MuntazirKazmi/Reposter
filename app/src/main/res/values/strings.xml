@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Repostt</string>
+    <string name="Instagram">Instagram Share URL</string>
+    <string name="load">Load Picture</string>
+    <string name="download">Download</string>
+
+</resources>
