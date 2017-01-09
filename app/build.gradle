@@ -30,4 +30,5 @@ dependencies {
     compile 'com.vistrav:ask:2.4'
     compile 'com.android.support:cardview-v7:24.+'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.ybq:Android-SpinKit:1.0.4'
 }

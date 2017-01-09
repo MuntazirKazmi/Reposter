@@ -1,49 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/cardview_dark_background">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/frameLayout"
-        android:layout_centerInParent="true">
-        <ImageView
-            android:layout_width="640px"
-            android:layout_height="640px"
-            android:scaleType="fitXY"
-            android:layout_gravity="center"
-            android:id="@+id/image1"
-            android:visibility="gone"
-            android:contentDescription="ImageView for loaded instagram image"
-            />
-
-        <VideoView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background">
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/videoView"
-            android:visibility="gone"/>
+            android:id="@+id/frameLayout"
+            android:layout_centerInParent="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/white"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/toolbar"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_launcher"
+                            android:id="@+id/launchericon"
+                            android:layout_alignParentLeft="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/app_name"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/download"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/download1"
+                            android:layout_marginRight="10dp"/>
+                    </RelativeLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:visibility="gone"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textColor="@color/colorAccent"
-            android:paddingLeft="60dp"
-            android:paddingRight="60dp"/>
+                </android.support.v7.widget.Toolbar>
+                <com.github.ybq.android.spinkit.SpinKitView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/spin_kit"
+                    style="@style/SpinKitView.Large.Wave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:SpinKit_Color="@color/white"
+                    android:layout_below="@+id/toolbar"
+                    android:layout_centerHorizontal="true"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image1"
+                    android:visibility="gone"
+                    android:contentDescription="ImageView for loaded instagram image"
+                    android:layout_below="@+id/toolbar"/>
+                <VideoView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/videoView"
+                    android:visibility="gone"
+                    android:layout_below="@+id/toolbar"/>
 
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/download1"
-            android:layout_gravity="top"
-            android:src="@android:drawable/stat_sys_download"
-            android:scaleType="centerInside"
-            android:background="@color/colorAccentBlur"
-            android:visibility="invisible"/>
-    </FrameLayout>
-
-
+            </RelativeLayout>
+        </FrameLayout>
 </RelativeLayout>

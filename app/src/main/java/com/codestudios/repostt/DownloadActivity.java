@@ -47,9 +47,9 @@ public class DownloadActivity extends AppCompatActivity {
 //    String NAME_FOLDER = "Repostt/";
     ImageView image;
     VideoView videoView;
-    ImageButton download;
+    ImageView download;
     TextView textView;
-    ProgressDialog progressDialog;
+//    ProgressDialog progressDialog;
     String downloadURL,downloadFilename;
 
 
@@ -59,8 +59,7 @@ public class DownloadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activty_download);
         image = (ImageView) findViewById(R.id.image1);
-        download = (ImageButton) findViewById(R.id.download1);
-        textView = (TextView) findViewById(R.id.textView);
+        download = (ImageView) findViewById(R.id.download1);
         videoView = (VideoView) findViewById(R.id.videoView);
 
 
@@ -135,7 +134,7 @@ public class DownloadActivity extends AppCompatActivity {
                 videoView.setVisibility(View.VISIBLE);
                 image.setVisibility(View.GONE);
                 videoView.setVideoURI(Uri.parse(media.getString("video_url")));
-                progressDialog = ProgressDialog.show(DownloadActivity.this, "Loading...", "Fetching your Video. Wait a moment");
+                //progressDialog = ProgressDialog.show(DownloadActivity.this, "Loading...", "Fetching your Video. Wait a moment");
                 MediaController mediaController = new MediaController(DownloadActivity.this);
                 mediaController.show();
                 videoView.setMediaController(mediaController);
@@ -144,9 +143,8 @@ public class DownloadActivity extends AppCompatActivity {
                 videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                     @Override
                     public void onPrepared(MediaPlayer mediaPlayer) {
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
                         videoView.start();
-                        videoView.pause();
                         download.setVisibility(View.VISIBLE);
                     }
                 });
@@ -154,12 +152,12 @@ public class DownloadActivity extends AppCompatActivity {
                 downloadURL = media.getString("display_src").split("\\?ig_cache_key")[0];
                 videoView.setVisibility(View.GONE);
                 image.setVisibility(View.VISIBLE);
-                progressDialog = ProgressDialog.show(DownloadActivity.this, "Loading...", "Fetching your Image. Wait a moment");
+                //progressDialog = ProgressDialog.show(DownloadActivity.this, "Loading...", "Fetching your Image. Wait a moment");
                 Picasso.with(DownloadActivity.this).load(media.getString("display_src")).into(image, new Callback() {
                     @Override
                     public void onSuccess() {
                         download.setVisibility(View.VISIBLE);
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
                     }
 
                     @Override
